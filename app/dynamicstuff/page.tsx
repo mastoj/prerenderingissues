@@ -1,11 +1,10 @@
+import { connection } from "next/server";
 import React, { Suspense } from "react";
 
 const getRandomNumberAsync = async () => {
+  await connection();
   console.log("==> getRandomNumberAsync called");
-  // Simulate a delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
   const randomNumber = Math.floor(Math.random() * 100);
-  console.log("==> Random number generated:", randomNumber);
   return randomNumber;
 };
 

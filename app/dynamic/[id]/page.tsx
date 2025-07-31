@@ -11,7 +11,7 @@ const PostLoader = async ({ id }: { id: Promise<string> }) => {
   "use cache";
   cacheLife("hours");
   // Sleep for 4 seconds to simulate a slow operation
-  await new Promise((resolve) => setTimeout(resolve, 4000));
+  await new Promise((resolve) => setTimeout(resolve, 10000));
   const resolvedId = await id;
   const post = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${resolvedId}`
